@@ -1,0 +1,109 @@
+.highlight {
+  color: #a39e9b;
+  background: #2f1e2e;
+}
+.highlight .code .comment,
+.highlight .code .quote {
+  color: #8d8687;
+}
+.highlight .code .variable,
+.highlight .code .template-variable,
+.highlight .code .tag,
+.highlight .code .name,
+.highlight .code .selector-id,
+.highlight .code .selector-class,
+.highlight .code .regexp,
+.highlight .code .link,
+.highlight .code .meta {
+  color: #ef6155;
+}
+.highlight .code .number,
+.highlight .code .built_in,
+.highlight .code .builtin-name,
+.highlight .code .literal,
+.highlight .code .type,
+.highlight .code .params,
+.highlight .code .deletion {
+  color: #f99b15;
+}
+.highlight .code .title,
+.highlight .code .section,
+.highlight .code .attribute {
+  color: #fec418;
+}
+.highlight .code .string,
+.highlight .code .symbol,
+.highlight .code .bullet,
+.highlight .code .addition {
+  color: #48b685;
+}
+.highlight .code .keyword,
+.highlight .code .selector-tag {
+  color: #815ba4;
+}
+.highlight .code .emphasis {
+  font-style: italic;
+}
+.highlight .code .strong {
+  font-weight: bold;
+}
+pre {
+  font-family: "Menlo", "Meslo LG", monospace;
+  font-size: 13px;
+  padding: 10px 15px;
+  padding-bottom: 0;
+  line-height: 22px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px dotted #666;
+  overflow-x: auto;
+}
+code {
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px dotted #666;
+  padding: 0 5px;
+}
+pre code {
+  border: none;
+  display: block;
+  padding: 0;
+}
+.highlight {
+  font-family: "Menlo", "Meslo LG", monospace;
+  background: #212326;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  padding: 10px 15px;
+  overflow-x: auto;
+  margin: 1rem 0 1rem 0;
+}
+.highlight figcaption {
+  zoom: 1;
+  margin: -5px 0 5px;
+  font-size: 0.9em;
+  color: #999;
+}
+.highlight figcaption a {
+  float: right;
+}
+.highlight figcaption:before,
+.highlight figcaption content: "" {
+  display: table;
+}
+.highlight figcaption:after {
+  clear: both;
+}
+.highlight pre {
+  padding: 0;
+  border: none;
+  background: none;
+}
+.highlight table {
+  width: auto;
+}
+.highlight td.gutter {
+  text-align: right;
+  padding-right: 20px;
+  display: none;
+}
