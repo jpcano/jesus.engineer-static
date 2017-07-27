@@ -49,18 +49,18 @@ getJSON("http://jesus.engineer:8000/twitter").then(function(json) {
 });
 
 var ghTypes = {
-    "PushEvent": "Commited code to ",
+    "PushEvent": "Commited code",
     "CreateEvent": "Created a new repository ",
-    "WatchEvent": "Starred the repository ",
-    "ForkEvent": "Forked the repository ",
-    "ReleaseEvent": "New release of  "
+    "WatchEvent": "Starred a repository ",
+    "ForkEvent": "Forked a repository ",
+    "ReleaseEvent": "Released a new package"
 }
 function ghText (type, repo) {
     var msg = ghTypes[type];
     if (msg === undefined) {
        msg = type;
     }
-    return `${msg} https://github.com/${repo}`;
+    return `${msg}<br/>https://github.com/${repo}`;
 }
 var al_twitter = new Autolinker({mention: "twitter"});
 getJSON("http://jesus.engineer:8000/github").then(function(json) {
