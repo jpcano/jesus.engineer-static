@@ -8,66 +8,45 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    
-        
-          
-              <link rel="shortcut icon" href="/images/favicon.ico">
-          
-        
-        
-          
-            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-          
-        
-        
-          
-            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-          
-        
-    
+    <% if (theme.customize.favicon) { %>
+        <% if (theme.customize.favicon.desktop) { %>
+          <% if (theme.customize.gravatar.email && theme.customize.favicon.desktop.gravatar) { %>
+              <link rel="shortcut icon" href="<%= gravatar(theme.customize.gravatar.email, 16) %>">
+          <% } else { %>
+              <link rel="shortcut icon" href="<%= url_for(theme.customize.favicon.desktop.url) %>">
+          <% } %>
+        <% } %>
+        <% if (theme.customize.favicon.android) { %>
+          <% if (theme.customize.gravatar.email && theme.customize.favicon.android.gravatar) { %>
+            <link rel="icon" type="image/png" href="<%= gravatar(theme.customize.gravatar.email, 192) %>" sizes="192x192">
+          <% } else { %>
+            <link rel="icon" type="image/png" href="<%= url_for(theme.customize.favicon.android.url) %>" sizes="192x192">
+          <% } %>
+        <% } %>
+        <% if (theme.customize.favicon.apple) { %>
+          <% if (theme.customize.gravatar.email && theme.customize.favicon.apple.gravatar) { %>
+            <link rel="apple-touch-icon" sizes="180x180" href="<%= gravatar(theme.customize.gravatar.email, 180) %>">
+          <% } else { %>
+            <link rel="apple-touch-icon" sizes="180x180" href="<%= url_for(theme.customize.favicon.apple.url) %>">
+          <% } %>
+        <% } %>
+    <% } %>
     <!-- title -->
-    <title>I&#39;m Jesus.</title>
+    <title><%= page.title ? page.title : config.title %></title>
     <!-- styles -->
-    <link rel="stylesheet" href="/css/default.css">
-    <link rel="stylesheet" href="/css/layout.css">
-    <link rel="stylesheet" href="/css/media-queries.css">
-    <link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <%- css('css/default.css') %>
+    <%- css('css/layout.css') %>
+    <%- css('css/media-queries.css') %>
+    <%- css('css/magnific-popup.css') %>
     <!-- rss -->
-    
-    
+    <% if (theme.rss === '' && config.feed && config.feed.path) { %>
+      <% theme.rss = config.feed.path %>
+    <% } %>
+    <% if (theme.rss) { %>
+      <link rel="alternate" href="<%= url_for(theme.rss) %>" title="<%= config.title %>" type="application/atom+xml" />
+    <% } %>
     <!-- jquery -->
-    <script src="/js/modernizr.js"></script>
-
-    <!-- Piwik -->
-    <script type="text/javascript">
-        var _paq = _paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="//jesus.engineer/espiando/";
-            _paq.push(['setTrackerUrl', u+'piwik.php']);
-            _paq.push(['setSiteId', '1']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-        })();
-    </script>
-    <!-- End Piwik Code -->
-
-    <!-- Google Analytics -->
-    
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-103635753-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
-    
+    <%- js('js/modernizr.js') %>
 </head>
 
     <body>
@@ -105,7 +84,7 @@
     <div class="row banner">
         <div class="banner-text">
             <h1 class="responsive-headline">I'm Jesus.</h1>
-            <h3>I'm an <span>engineer</span> with a passion for <span>machine learning</span> and <span>functional programming</span>. Let's <a class="smoothscroll" href="#about">start scrolling</a> and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
+            <h3>I'm an <span>engineer</span> with a passion for <span>machine learning</span>, <span>functional programming</span> and <span>deserts</span>. Let's <a class="smoothscroll" href="#about">start scrolling</a> and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
             <hr />
             <ul class="social">
 		
